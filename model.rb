@@ -11,11 +11,8 @@ class Card
     guess == self.term ? true : false
   end
 
-
-
   def to_s
- "Definition: #{self.definition} Term: #{self.term}"
+    "Definition: #{self.definition} Term: #{self.term}"
   end
 
 end
-p Card.new({definition: "a", term: "b"})
