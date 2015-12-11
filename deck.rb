@@ -9,13 +9,12 @@ class Deck
     @flashcards = []
     flashcards_from_file.each_with_index do |element, index|
       if index % 2 == 0
-        # binding.pry
         self.flashcards << Card.new({definition: element})
       else
         self.flashcards.last.term = element
       end
     end
-    puts @flashcards
+    @flashcards
   end
 
   def move_card_to_back
@@ -24,5 +23,5 @@ class Deck
 
   def generate_random_card
     flashcards.shuffle
-  end
+  end #?
 end
