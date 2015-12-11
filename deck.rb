@@ -1,17 +1,21 @@
+require_relative 'model'
+require 'pry'
 
 class Deck
+  attr_reader :flashcards_from_file, :flashcards, :definition
+  attr_accessor :term
 
   def initialize(flashcards_from_file)
     @flashcards = []
-    flashcard_from_file.each_with_index do |element, index|
+    flashcards_from_file.each_with_index do |element, index|
       if index % 2 == 0
-        element = definition
-        self.flashcards << Card.new({definition: definition, term: nil})
+        # binding.pry
+        self.flashcards << Card.new({definition: element})
       else
-        element = term
-        flashcards[index - 1].term = term
+        self.flashcards.last.term = element
       end
     end
+    puts @flashcards
   end
 
   def move_card_to_back

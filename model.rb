@@ -1,8 +1,6 @@
-require 'relative'
-
 class Card
-  include Parser
-  attr_reader :definition, :term, :flashcards
+  attr_reader :definition, :flashcards
+  attr_accessor :term
 
   def initialize(word = {})
     @definition = word[:definition]
@@ -16,7 +14,7 @@ class Card
 
 
   def to_s
-
+ "Definition: #{self.definition} Term: #{self.term}"
   end
 
 end
