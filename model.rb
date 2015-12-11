@@ -2,7 +2,7 @@ class Card
   attr_reader :definition, :term
 
   def initialize(word = {})
-    @definition = word[:defintion]
+    @definition = word[:definition]
     @term = word[:term]
   end
 
@@ -17,3 +17,4 @@ class Card
   end
 
 end
+p Card.new({definition: "a", term: "b"})
