@@ -1,8 +1,11 @@
+require 'relative'
+
 class Card
-  attr_reader :definition, :term
+  include Parser
+  attr_reader :definition, :term, :flashcards
 
   def initialize(word = {})
-    @definition = word[:defintion]
+    @definition = word[:definition]
     @term = word[:term]
   end
 
