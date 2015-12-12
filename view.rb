@@ -15,14 +15,27 @@ class View
 
   def correct_message
     puts "Correct!"
+    puts "\n"
+  end
+
+  def learned_message(card)
+    puts "It looks like you learned #{card.term}. We'll move it into your 'learned' deck."
+    puts "\n"
   end
 
   def incorrect_message
     puts "Incorrect! Try again!"
+    puts "\n"
   end
 
   def goodbye_message
     puts "Thanks for playing!"
+  end
+
+  def display_deck_defs(deck)
+    # binding.pry
+    deck.flashcards.each{|card| puts "- " + card.definition}
+    puts "\n"
   end
 
 end
