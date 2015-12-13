@@ -33,7 +33,7 @@ class Controller
     elsif player_input == "display learned"
     elsif current_card.correct?(player_input)
         @viewer.correct_message
-        if current_card.correct_count >1 && current_card.ratio == 1
+        if current_card.correct_count >2 && current_card.ratio == 1
           @viewer.learned_message(current_card)
           @deck.move_card_to_learned
         else
