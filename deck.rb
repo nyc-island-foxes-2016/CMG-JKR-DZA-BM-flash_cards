@@ -1,4 +1,4 @@
-require_relative 'model'
+# require_relative 'card'
 require 'pry'
 
 class Deck
@@ -7,6 +7,7 @@ class Deck
 
   def initialize(flashcards_from_file)
     @flashcards = []
+    @learned_flashcards = []
     flashcards_from_file.each_with_index do |element, index|
       if index % 2 == 0
         self.flashcards << Card.new({definition: element})
@@ -21,7 +22,11 @@ class Deck
     flashcards.push(flashcards.shift)
   end
 
+  def move_card_to_learned
+    @learned_flashcards.push(flashcards.shift)
+  end
+
   def generate_random_card
-    flashcards.shuffle
-  end #?
+    flashcards.shuffle!
+  end
 end
